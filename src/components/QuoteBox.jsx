@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import pharses from "../pharses.json";
+import "../App.css";
 
 const colors = [
   "#F44336",
@@ -17,22 +18,30 @@ const colors = [
 ];
 
 const QuoteBox = () => {
+  const colortitle = document.getElementById("h3");
+  const colortitles = document.getElementById("h4");
+
   const pharseRandom = Math.floor(Math.random() * pharses.length);
-  const [index, setIndex] = useState(pharseRandom);
+  const [index, setIndex] = useState(pharseRandom, colortitle, colortitles);
   const changePharse = () => {
     const pharseRandom = Math.floor(Math.random() * pharses.length);
-    setIndex(pharseRandom);
+    setIndex(pharseRandom, colortitle, colortitles);
 
     const colorRandom = Math.floor(Math.random() * colors.length);
     document.body.style = `background: ${colors[colorRandom]}`;
+    colortitle.style = `color: ${colors[colorRandom]}`;
+    colortitles.style = `color: ${colors[colorRandom]}`;
+    colorIcon.style = `background: ${colors[colorRandom]}`;
   };
 
   return (
     <div className="QuoteBox">
-      <i class="fa-solid fa-quote-right "></i>
-      <h3>{pharses[index].quote}</h3>
-      <h4>{pharses[index].author}</h4>
-      <button onClick={changePharse}>1</button>
+      <i className="fa-solid fa-quote-right  "></i>
+      <h3 id="h3">{pharses[index].quote}</h3>
+      <h4 id="h4">{pharses[index].author}</h4>
+      <button onClick={changePharse}>
+        <i className="fa-solid fa-angle-right"></i>
+      </button>
     </div>
   );
 };

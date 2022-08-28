@@ -7,6 +7,9 @@ body {
   width: 500px;
   margin: 0 auto;
   border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: italic;
 }
 
 .QuoteBox {
@@ -24,4 +27,13 @@ body {
   width: 50px;
   text-align: end;
   margin-left: 350px;
+}
+
+button .fa-solid {
+  font-size: 3em;
+  margin: 0 auto;
+}
+
+div .fa-solid {
+  font-size: 3em;
 }
