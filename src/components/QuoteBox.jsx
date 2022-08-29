@@ -20,6 +20,7 @@ const colors = [
 const QuoteBox = () => {
   const colortitle = document.getElementById("h3");
   const colortitles = document.getElementById("h4");
+  const colorbutton = document.getElementById("bt");
 
   const pharseRandom = Math.floor(Math.random() * pharses.length);
   const [index, setIndex] = useState(pharseRandom, colortitle, colortitles);
@@ -31,7 +32,8 @@ const QuoteBox = () => {
     document.body.style = `background: ${colors[colorRandom]}`;
     colortitle.style = `color: ${colors[colorRandom]}`;
     colortitles.style = `color: ${colors[colorRandom]}`;
-    colorIcon.style = `background: ${colors[colorRandom]}`;
+    colorbutton.style = `color: ${colors[colorRandom]}`;
+    colorbutton.style = `background: ${colors[colorRandom]}`;
   };
 
   return (
@@ -39,7 +41,7 @@ const QuoteBox = () => {
       <i className="fa-solid fa-quote-right  "></i>
       <h3 id="h3">{pharses[index].quote}</h3>
       <h4 id="h4">{pharses[index].author}</h4>
-      <button onClick={changePharse}>
+      <button id="bt" onClick={changePharse}>
         <i className="fa-solid fa-angle-right"></i>
       </button>
     </div>
