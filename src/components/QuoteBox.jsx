@@ -23,10 +23,10 @@ const QuoteBox = () => {
   const changePharse = () => {
     const pharseRandom = Math.floor(Math.random() * pharses.length);
     setIndex(pharseRandom);
-
+  };
     const colorRandom = Math.floor(Math.random() * colors.length);
     document.body.style = `background: ${colors[colorRandom]}; color: ${colors[colorRandom]}`;
-  };
+  
 
   return (
     <div className="QuoteBox">
